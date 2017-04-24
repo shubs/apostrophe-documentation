@@ -97,6 +97,29 @@ Open up `lib/modules/apostrophe-pages/views/pages/home.html` in your text editor
 
 3. Refresh the browser.
 
+### Making Apostrophe run forever with pm2
+
+The previously described method to start the app is `node app.js`. This is a good way to do local development and tests, but if you start your app using the command line it will stop whenever you are closing the terminal window or log out from SSH. To prevent Apostrophe from stopping you have to run your app as a service. We are going to use [pm2](https://github.com/Unitech/pm2) for that.
+
+1. Press "control-C" in the terminal window where `node app.js` is running.
+
+2. Type `pm2 start app.js --name=Apostrophe --watch` to start the application and this one will restart automatically if you modify a file
+
+3. Now if you do `pm2 list` you will see your app running as a service.
+
+4. Stop, restart & reload
+
+```bash
+# To stop your app
+`pm2 stop Apostrophe`
+
+# To restart it
+`pm2 restart Apostrophe`
+
+# To reload it without downtime
+`pm2 reload Apostrophe`
+```
+
 ### Working with areas
 
 Hey, what's this new button about?
