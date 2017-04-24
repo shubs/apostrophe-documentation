@@ -129,6 +129,14 @@ brew install imagemagick
 
 Now you have the `convert` and `identify` command line tools, which Apostrophe uses to scale and crop images.
 
+##### Install PM2
+
+```bash
+npm install pm2 -g
+```
+
+pm2 is an advanced, production process manager for Node.js, we will use it to run, restard, reaload our application
+
 ## Build a website!
 
 Now that you have your environment configured it's time to create our first Apostrophe project.
